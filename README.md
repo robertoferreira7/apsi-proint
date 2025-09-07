@@ -2,8 +2,7 @@
 
 ---
 
-Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)**.  
-
+Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e Análise e **Análise e Projeto de Sistemas de Informação (APSI)**, do curso de Bacharelado em Sistemas de Informação, semestre 2025.1.
 ---
 
 ## Estrutura do Repositório
