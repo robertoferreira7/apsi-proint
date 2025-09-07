@@ -1,11 +1,13 @@
 # 🎓 APSI-PROINT
 
+
 ---
 
-Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e Análise e **Análise e Projeto de Sistemas de Informação (APSI)**, do curso de Bacharelado em Sistemas de Informação, semestre 2025.1.
+Repositório unificado para o projeto desenvolvido nas disciplinas _Projeto Integrador (PROINT)_ e _Análise e Projeto de Sistemas de Informação (APSI)_, do curso de Bacharelado em Sistemas de Informação, semestre 2025.1.
+
 ---
 
-## Estrutura do Repositório
+## 📌 Estrutura do Repositório
 ```bash
 .
 ├── proint/   # Projeto da disciplina PROINT
@@ -15,7 +17,7 @@ Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Int
 
 ---
 
-## Colaboradores
+## 👨‍💻 Colaboradores
 
 > Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
