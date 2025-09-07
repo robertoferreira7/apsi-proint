@@ -7,9 +7,10 @@ Repositório unificado para o projeto desenvolvido nas disciplinas _Projeto Inte
 ---
 
 ## Organização do Projeto
-- [🖼️ Trello](https://trello.com/b/Dp9VDaAQ/proint-apsi)
+- [🖼️ Trello]()
 - [📄 Documento do Trabalho]()
 - [📊 Cronograma]()
+- [📜 Termo de abertua]()
 
 ## Colaboradores
 
