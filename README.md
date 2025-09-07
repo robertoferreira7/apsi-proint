@@ -1,16 +1,8 @@
 # 🎓 APSI-PROINT
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![EJS](https://img.shields.io/badge/EJS-8A2BE2?style=for-the-badge&logo=ejs&logoColor=white)
-![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
-
 ---
 
-Repositório unificado para os projetos desenvolvidos nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)**.  
-Aqui você encontra a documentação, código-fonte e principais informações de cada aplicação.
+Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)**.  
 
 ---
 
