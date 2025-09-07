@@ -6,7 +6,7 @@ Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Int
 
 ---
 
-## 📌 Estrutura do Repositório
+## Estrutura do Repositório
 ```bash
 .
 ├── proint/   # Projeto da disciplina PROINT
@@ -16,7 +16,7 @@ Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Int
 
 ---
 
-## 👨‍💻 Colaboradores
+## Colaboradores
 
 > Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
