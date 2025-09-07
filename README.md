@@ -29,8 +29,8 @@ Aqui você encontra a documentação, código-fonte e principais informações d
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/amandargusmao">
-        <img src="https://github.com/amandargusmao.png" width="100px;" alt="Foto de perfil de Amanda Gusmão"/><br>
+      <a href="https://github.com/aao">
+        <img src="https://github.com/SamyraFigueredo.png" width="100px;" alt="Foto de perfil"/><br>
         <sub>
           <b>Samyra Figueredo</b>
         </sub>
@@ -46,3 +46,4 @@ Aqui você encontra a documentação, código-fonte e principais informações d
     </td>
   </tr>
 </table>
+
