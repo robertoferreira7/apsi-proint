@@ -1,8 +1,8 @@
 # 🎓 APSI-PROINT
 
----
+--
 Repositório unificado para o projeto desenvolvido nas disciplinas _Projeto Integrador (PROINT)_ e _Análise e Projeto de Sistemas de Informação (APSI)_, do curso de Bacharelado em Sistemas de Informação, semestre 2025.1.
----
+--
 ## Descrição do Projeto
 Este projeto tem como objetivo desenvolver e implementar uma solução de **Data Warehouse (DW)** e **Business Intelligence (BI)** para integrar, armazenar e analisar dados criminais e demográficos do estado de Alagoas.  
 
