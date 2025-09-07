@@ -1,23 +1,17 @@
 # 🎓 APSI-PROINT
 
-
 ---
 
 Repositório unificado para o projeto desenvolvido nas disciplinas _Projeto Integrador (PROINT)_ e _Análise e Projeto de Sistemas de Informação (APSI)_, do curso de Bacharelado em Sistemas de Informação, semestre 2025.1.
 
 ---
 
-## 📌 Estrutura do Repositório
-```bash
-.
-├── proint/   # Projeto da disciplina PROINT
-├── apsi/     # Projeto da disciplina APSI
-└── README.md # Este arquivo
-```
+## Organização do Projeto
+- [🖼️ Trello](https://trello.com/b/Dp9VDaAQ/proint-apsi)
+- [📄 Documento do Trabalho]()
+- [📊 Cronograma]()
 
----
-
-## 👨‍💻 Colaboradores
+## Colaboradores
 
 > Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
