@@ -13,8 +13,10 @@ Este projeto tem como objetivo desenvolver e implementar uma solução de **Data
 - [📜 Termo de abertua]()
 
 ## 🛠 Tecnologias Usadas
-- **Power BI** → Criação de dashboards interativos e análises visuais  
-- **MYSQL** → Modelagem e consultas ao Data Warehouse  
+- **pgModeler** → Modelagem lógica do Data Warehouse  
+- **PostgreSQL** → SGBD responsável por servir a instância do Data Warehouse  
+- **Pentaho Data Integration (PDI)** → Transformação e carregamento dos dados no Data Warehouse 
+- **Power BI** → Consulta aos dados no Data Warehouse, criação de dashboards interativos e análises visuais  
 
 ## Colaboradores
 
