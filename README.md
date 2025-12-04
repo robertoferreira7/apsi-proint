@@ -1,3 +1,13 @@
+
+
+```mermaid
+flowchart LR
+    Excel[Planilhas SSP] --> PDI[Pentaho PDI]
+    PDI --> DW[(Data Warehouse PostgreSQL)]
+    DW --> PowerBI[Power BI]
+```
+
+
 # 🎓 APSI-PROINT — Data Warehouse & Business Intelligence
 
 Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** — Bacharelado em Sistemas de Informação, semestre **2025.1**.
