@@ -35,7 +35,7 @@ visualização analítica.
 
   **PostgreSQL:**                      SGBD utilizado para hospedar o DW
 
-  **Pentaho PDI (Kettle)**            Processos ETL para carga e
+  **Pentaho PDI (Kettle):**            Processos ETL para carga e
                                       tratamento dos dados
 
   **Power BI:**                        Dashboards, relatórios interativos
@@ -47,28 +47,72 @@ visualização analítica.
 
 ------------------------------------------------------------------------
 
-# 🐳 Guia Docker --- Configuração do Ambiente do DW
+# Guia de Inicialização do Ambiente Docker do Data Warehouse
 
-## **1. Inicialização do Ambiente**
+## 🐳 Inicialização do Ambiente Docker (Passo a Passo)
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Ação        Comando / Instrução                                                                                              Observações
-  ----------- ---------------------------------------------------------------------------------------------------------------- ----------------------------------
-  **1.1.      No terminal, dentro da pasta com `docker-compose.yml`:`<br>`{=html}`<br>`{=html}`bash\ndocker-compose up -d\n`   Sobe o container e cria o volume
-  Iniciar o                                                                                                                    `db-data`.
-  serviço**                                                                                                                    
+### Pré-requisitos
+- Docker e Docker Compose instalados.
+- Estar no mesmo diretório do arquivo `docker-compose.yml`.
+- Ter o arquivo DDL `dw_ssp.sql` disponível localmente.
 
-  **1.2.      `bash\ndocker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < C:\\apsi-proint-main\\dw_ssp.sql\n`   No Git Bash, usar:
-  Aplicar                                                                                                                      `/c/apsi-proint-main/dw_ssp.sql`
-  estrutura                                                                                                                    
-  (DDL)**                                                                                                                      
+---
 
-  **1.3.      `bash\ndocker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\\dt"\n`                           Lista as tabelas criadas.
-  Validar                                                                                                                      
-  tabelas**                                                                                                                    
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Passo 1 — Iniciar os containers
+```bash
+docker-compose up -d
+```
 
-------------------------------------------------------------------------
+---
+
+### Passo 2 — Aplicar a estrutura do banco (DDL)
+No Windows (PowerShell ou CMD):
+```bash
+docker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < C:\apsi-proint-main\dw_ssp.sql
+```
+
+No Git Bash (MINGW64):
+```bash
+docker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < /c/apsi-proint-main/dw_ssp.sql
+```
+
+---
+
+### Passo 3 — Validar as tabelas criadas
+```bash
+docker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\dt"
+```
+
+---
+
+### Passo 4 — Teste simples
+```sql
+SELECT count(*) FROM public.dim_local;
+```
+
+---
+
+### Comandos úteis
+- Entrar no container:
+```bash
+docker exec -it dw_cvli_postgres bash
+```
+
+- Acessar o psql:
+```bash
+docker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker
+```
+
+- Derrubar containers:
+```bash
+docker-compose down
+```
+
+- Derrubar + limpar volumes:
+```bash
+docker-compose down -v
+```
+
 
 # 🗃️ Conexão via PgAdmin
 
