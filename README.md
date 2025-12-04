@@ -5,7 +5,6 @@ Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Int
 ---
 
 ## 📚 Índice
-...
 
 - [📌 Descrição do Projeto](#-descrição-do-projeto)
 - [📁 Organização do Repositório](#-organização-do-repositório)
