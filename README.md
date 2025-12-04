@@ -1,7 +1,6 @@
 # 🎓 APSI-PROINT — Data Warehouse & Business Intelligence
 
-> 📊 **DW + ETL + Docker + BI**  
-> Integração completa de dados criminais de AL usando Pentaho, PostgreSQL, Docker e Power BI.
+Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** — Bacharelado em Sistemas de Informação, semestre **2025.1**.
 
 ---
 
