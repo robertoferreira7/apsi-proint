@@ -1,52 +1,112 @@
-# 🎓 APSI-PROINT
+🎓 APSI-PROINT — Data Warehouse & Business Intelligence
+Repositório unificado para o projeto desenvolvido nas disciplinas Projeto Integrador (PROINT) e Análise e Projeto de Sistemas de Informação (APSI) — Bacharelado em Sistemas de Informação, semestre 2025.1.
+📌 Descrição do Projeto
+
+O objetivo deste projeto é desenvolver e implementar uma solução de Data Warehouse (DW) e Business Intelligence (BI) para integrar, armazenar e analisar dados criminais e demográficos do estado de Alagoas.
+
+A solução integra modelagem, ingestão de dados, processamento ETL e visualização analítica.
+
+📁 Organização do Repositório
+
+🖼️ Trello — adicionar link
+
+📄 Documento do Trabalho — adicionar link
+
+📊 Cronograma — adicionar link
+
+📜 Termo de Abertura — adicionar link
+
+🛠 Tecnologias Utilizadas
+Tecnologia	Aplicação
+pgModeler	Modelagem lógica e física do Data Warehouse
+PostgreSQL	SGBD utilizado para hospedar o DW
+Pentaho PDI (Kettle)	Processos ETL para carga e tratamento dos dados
+Power BI	Dashboards, relatórios interativos e análise visual
+Docker & Docker Compose	Infraestrutura containerizada para o PostgreSQL do DW
+🐳 Guia Docker — Configuração do Ambiente do DW
+1. Inicialização do Ambiente
+Ação	Comando / Instrução	Observações
+1.1. Iniciar o serviço	No terminal, dentro da pasta com docker-compose.yml:
+
+bash\ndocker-compose up -d\n	Sobe o container e cria o volume db-data.
+1.2. Aplicar estrutura (DDL)	bash\ndocker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < C:\apsi-proint-main\dw_ssp.sql\n	No Git Bash, usar: /c/apsi-proint-main/dw_ssp.sql
+1.3. Validar tabelas	bash\ndocker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\dt"\n	Lista as tabelas criadas.
+🗃️ Conexão via PgAdmin
+
+No PgAdmin: Create → Server
+
+Aba Connection
+
+Host: localhost
+
+Port: 5432
+
+Database: dw_cvli_docker
+
+Aba Authentication
+
+Username: user_dw
+
+Password: mestre
+
+Validar conexão:
+
+SELECT count(*) FROM public.dim_local;
+
+⚙️ Carga de Dados — Pentaho PDI (ETL)
+3.1 Configurar conexão ssp
+
+Tipo: PostgreSQL
+
+Host: localhost
+
+Porta: 5432
+
+Banco: dw_cvli_docker
+
+Usuário: user_dw
+
+Senha: mestre
+
+3.2 Ajustar caminhos das fontes
+
+Em todas as transformações (.ktr):
+
+Abrir step Microsoft Excel Input
+
+Selecionar arquivo em:
+
+C:\apsi-proint-main\Bases de Dados\
 
 
-### Repositório unificado para o projeto desenvolvido nas disciplinas _Projeto Integrador (PROINT)_ e _Análise e Projeto de Sistemas de Informação (APSI)_, do curso de Bacharelado em Sistemas de Informação, semestre 2025.1.
+Clicar Add
 
-## Descrição do Projeto
-Este projeto tem como objetivo desenvolver e implementar uma solução de **Data Warehouse (DW)** e **Business Intelligence (BI)** para integrar, armazenar e analisar dados criminais e demográficos do estado de Alagoas.  
+3.3 Executar o Job principal
 
-## Organização do Projeto
-- [🖼️ Trello]()
-- [📄 Documento do Trabalho]()
-- [📊 Cronograma]()
-- [📜 Termo de abertua]()
+Abrir: job_dw_ssp.kjb
 
-## 🛠 Tecnologias Usadas
-- **pgModeler** → Modelagem lógica do Data Warehouse  
-- **PostgreSQL** → SGBD responsável por servir a instância do Data Warehouse  
-- **Pentaho Data Integration (PDI)** → Transformação e carregamento dos dados no Data Warehouse 
-- **Power BI** → Consulta aos dados no Data Warehouse, criação de dashboards interativos e análises visuais  
+Clicar: Run
 
-## Colaboradores
+3.4 Validar carga
+SELECT count(*) FROM fato_cvli;
 
-> Agradecemos às seguintes pessoas que contribuíram para este projeto:
+📊 Conexão no Power BI
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/LaianeBarreto">
-        <img src="https://github.com/LaianeBarreto.png" width="100px;" alt="Foto de perfil de Laiane Barreto"/><br>
-        <sub>
-          <b>Laiane Barreto</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/amandargusmao">
-        <img src="https://github.com/amandargusmao.png" width="100px;" alt="Foto de perfil de Amanda Gusmão"/><br>
-        <sub>
-          <b>Amanda Gusmão</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/robertoferreira7">
-        <img src="https://github.com/robertoferreira7.png" width="100px;" alt="Foto de perfil de Roberto Ferreira"/><br>
-        <sub>
-          <b>Roberto Ferreira</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+Obter Dados → PostgreSQL
+
+Servidor: localhost:5432
+
+Banco: dw_cvli_docker
+
+Credenciais:
+
+Usuário: user_dw
+
+Senha: mestre
+
+Selecionar tabelas (dimensões e fato)
+
+Carregar dados
+
+👥 Colaboradores
+<table> <tr> <td align="center"> <a href="https://github.com/LaianeBarreto"> <img src="https://github.com/LaianeBarreto.png" width="100px;"><br> <b>Laiane Barreto</b> </a> </td> <td align="center"> <a href="https://github.com/amandargusmao"> <img src="https://github.com/amandargusmao.png" width="100px;"><br> <b>Amanda Gusmão</b> </a> </td> <td align="center"> <a href="https://github.com/robertoferreira7"> <img src="https://github.com/robertoferreira7.png" width="100px;"><br> <b>Roberto Ferreira</b> </a> </td> </tr> </table>
