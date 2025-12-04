@@ -144,7 +144,6 @@ Em **todas as transformações (.ktr)**:
 -   Selecionar arquivo em:
 
 ```{=html}
-<!-- -->
 ```
     C:\apsi-proint-main\Bases de Dados\
 
