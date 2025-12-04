@@ -27,9 +27,6 @@ visualização analítica.
 
 ## 🛠 Tecnologias Utilizadas
 
-  -----------------------------------------------------------------------
-  Tecnologia                          Aplicação
-  ----------------------------------- -----------------------------------
   **pgModeler:**                       Modelagem lógica e física do Data
                                       Warehouse
 
