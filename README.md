@@ -187,10 +187,11 @@ SELECT count(*) FROM fato_cvli;
 
 ---
 
-## 📐 Arquitetura do Projeto
+## Arquitetura do Projeto
 
-``mermaid flowchart LR Excel[Planilhas SSP] --> PDI[Pentaho PDI] PDI --> DW[(Data Warehouse PostgreSQL)] DW --> PowerBI[Power BI]
-
+<p align="center">
+  <img src="[https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/caminho/da/imagem.png](https://github.com/robertoferreira7/apsi-proint/blob/main/img/Arquitetura%20Atualizada.png?raw=true)" width="750">
+</p>
 ---
 
 ## 👥 Colaboradores
