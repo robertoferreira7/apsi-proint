@@ -1,209 +1,224 @@
-# 🎓 APSI-PROINT --- Data Warehouse & Business Intelligence
+# 🎓 APSI-PROINT — Data Warehouse & Business Intelligence
 
-### Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** --- Bacharelado em Sistemas de Informação, semestre **2025.1**.
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Pentaho](https://img.shields.io/badge/Pentaho_PDI-0A5?logo=pentaho&logoColor=white)
+![PowerBI](https://img.shields.io/badge/Power_BI-F2C811?logo=powerbi&logoColor=black)
+![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)
 
-------------------------------------------------------------------------
-
-## 📌 Descrição do Projeto
-
-O objetivo deste projeto é desenvolver e implementar uma solução de
-**Data Warehouse (DW)** e **Business Intelligence (BI)** para integrar,
-armazenar e analisar **dados criminais e demográficos do estado de
-Alagoas**.
-
-A solução integra modelagem, ingestão de dados, processamento ETL e
-visualização analítica.
-
-------------------------------------------------------------------------
-
-## 📁 Organização do Repositório
-
--   🖼️ [Trello](https://trello.com/b/Dp9VDaAQ/proint-apsi)
--   📄 [Google driver](https://drive.google.com/drive/u/0/folders/1lu4PswSunfSxKgVsDYo36EFelErIbT4t)
-
-
-------------------------------------------------------------------------
-
-## 🛠 Tecnologias Utilizadas
-
-  **pgModeler:**                       Modelagem lógica e física do Data
-                                      Warehouse
-
-  **PostgreSQL:**                      SGBD utilizado para hospedar o DW
-
-  **Pentaho PDI:**            Processos ETL para carga e
-                                      tratamento dos dados
-
-  **Power BI:**                        Dashboards, relatórios interativos
-                                      e análise visual
-
-  **Docker & Docker Compose:**         Infraestrutura containerizada para
-                                      o PostgreSQL do DW
-
-------------------------------------------------------------------------
-## 🐳 Inicialização do Ambiente Docker (Passo a Passo)
-
-### Pré-requisitos
-- Docker e Docker Compose instalados.
-- Estar no mesmo diretório do arquivo `docker-compose.yml`.
-- Ter o arquivo DDL `dw_ssp.sql` disponível localmente.
+Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** — Bacharelado em Sistemas de Informação, semestre **2025.1**.
 
 ---
 
-### Passo 1 — Iniciar os containers
+## 📚 Índice
+
+- [📌 Descrição do Projeto](#-descrição-do-projeto)
+- [📁 Organização do Repositório](#-organização-do-repositório)
+- [🛠 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [🐳 Inicialização do Ambiente Docker](#-inicialização-do-ambiente-docker-passo-a-passo)
+- [🗃️ Conexão via PgAdmin](#️-conexão-via-pgadmin)
+- [⚙️ Carga de Dados — Pentaho PDI (ETL)](#️-carga-de-dados--pentaho-pdi-etl)
+- [📊 Conexão no Power BI](#-conexão-no-power-bi)
+- [📐 Arquitetura do Projeto](#-arquitetura-do-projeto)
+- [👥 Colaboradores](#-colaboradores)
+
+---
+
+## 📌 Descrição do Projeto
+
+O objetivo deste projeto é desenvolver uma solução completa de **Data Warehouse (DW)** e **Business Intelligence (BI)** para integrar, armazenar e analisar **dados criminais e demográficos do estado de Alagoas**.
+
+A solução envolve:
+
+- Modelagem dimensional  
+- Ingestão e tratamento de dados (ETL com Pentaho PDI)  
+- Infraestrutura containerizada  
+- Dashboards interativos com Power BI  
+
+---
+
+## 📁 Organização do Repositório
+
+- 🗂️ **Trello:** https://trello.com/b/Dp9VDaAQ/proint-apsi  
+- 📄 **Google Drive:** https://drive.google.com/drive/u/0/folders/1lu4PswSunfSxKgVsDYo36EFelErIbT4t  
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- **pgModeler** — Modelagem lógica e física  
+- **PostgreSQL** — Banco de dados do DW  
+- **Pentaho PDI** — Processos ETL  
+- **Power BI** — Dashboards e análises  
+- **Docker & Docker Compose** — Infraestrutura containerizada  
+
+---
+
+## 🐳 Inicialização do Ambiente Docker (Passo a Passo)
+
+### ✔ Pré-requisitos
+- Docker e Docker Compose instalados  
+- Estar no diretório do arquivo `docker-compose.yml`  
+- Ter o arquivo DDL `dw_ssp.sql` disponível localmente  
+
+---
+
+### ✔ Passo 1 — Iniciar os containers
 ```bash
 docker-compose up -d
 ```
 
 ---
 
-### Passo 2 — Aplicar a estrutura do banco (DDL)
-No Windows (PowerShell ou CMD):
+### ✔ Passo 2 — Aplicar a estrutura do banco (DDL)
+
+#### Windows (PowerShell/CMD)
 ```bash
 docker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < C:\apsi-proint-main\dw_ssp.sql
 ```
 
-No Git Bash (MINGW64):
+#### Git Bash (MINGW64)
 ```bash
 docker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < /c/apsi-proint-main/dw_ssp.sql
 ```
 
 ---
 
-### Passo 3 — Validar as tabelas criadas
+### ✔ Passo 3 — Validar tabelas
 ```bash
 docker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\dt"
 ```
 
 ---
 
-### Passo 4 — Teste simples
+### ✔ Passo 4 — Teste simples
 ```sql
 SELECT count(*) FROM public.dim_local;
 ```
 
 ---
 
-### Comandos úteis
-- Entrar no container:
+### 🔧 Comandos úteis
+
+Entrar no container:
 ```bash
 docker exec -it dw_cvli_postgres bash
 ```
 
-- Acessar o psql:
+Acessar o psql:
 ```bash
 docker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker
 ```
 
-- Derrubar containers:
+Derrubar containers:
 ```bash
 docker-compose down
 ```
 
-- Derrubar + limpar volumes:
+Derrubar + remover volumes:
 ```bash
 docker-compose down -v
 ```
 
+---
 
-# 🗃️ Conexão via PgAdmin
+## 🗃️ Conexão via PgAdmin
 
-1.  No PgAdmin: **Create → Server**
-2.  Aba **Connection**
-    -   Host: `localhost`\
-    -   Port: `5432`\
-    -   Database: `dw_cvli_docker`
-3.  Aba **Authentication**
-    -   Username: `user_dw`\
-    -   Password: `mestre`
-4.  Validar conexão:
+1. **Create → Server**  
+2. Aba *Connection*:  
+   - Host: `localhost`  
+   - Port: `5432`  
+   - Database: `dw_cvli_docker`  
+3. Aba *Authentication*:  
+   - Username: `user_dw`  
+   - Password: `mestre`  
 
-``` sql
+Validação:
+```sql
 SELECT count(*) FROM public.dim_local;
 ```
 
-------------------------------------------------------------------------
+---
 
-# ⚙️ Carga de Dados --- Pentaho PDI (ETL)
+## ⚙️ Carga de Dados — Pentaho PDI (ETL)
 
-## **3.1 Configurar conexão `ssp`**
+### ✔ 1) Configurar Conexão `ssp`
+- Tipo: PostgreSQL  
+- Host: `localhost`  
+- Porta: `5432`  
+- Banco: `dw_cvli_docker`  
+- Usuário: `user_dw`  
+- Senha: `mestre`  
 
--   Tipo: PostgreSQL\
--   Host: `localhost`\
--   Porta: `5432`\
--   Banco: `dw_cvli_docker`\
--   Usuário: `user_dw`\
--   Senha: `mestre`
+---
 
-## **3.2 Ajustar caminhos das fontes**
+### ✔ 2) Ajustar caminhos das fontes (Planilhas Excel)
 
-Em **todas as transformações (.ktr)**:
+Em **todas as transformações (.ktr)**, configure:
 
--   Abrir step **Microsoft Excel Input**
--   Selecionar arquivo em:
-
-```{=html}
 ```
-    C:\apsi-proint-main\Bases de Dados\
+C:/apsi-proint-main/Bases de Dados/
+```
 
--   Clicar **Add**
+---
 
-## **3.3 Executar o Job principal**
+### ✔ 3) Executar o Job Principal
 
--   Abrir: `job_dw_ssp.kjb`
--   Clicar: **Run**
+- Abrir: `job_dw_ssp.kjb`  
+- Clicar: **Run**  
 
-## **3.4 Validar carga**
+---
 
-``` sql
+### ✔ 4) Validar carga
+```sql
 SELECT count(*) FROM fato_cvli;
 ```
 
-------------------------------------------------------------------------
+---
 
-# 📊 Conexão no Power BI
+## 📊 Conexão no Power BI
 
-1.  **Obter Dados → PostgreSQL**
-2.  Servidor: `localhost:5432`
-3.  Banco: `dw_cvli_docker`
-4.  Credenciais:
-    -   Usuário: `user_dw`\
-    -   Senha: `mestre`
-5.  Selecionar tabelas (dimensões e fato)\
-6.  Carregar dados
+1. Obter Dados → **PostgreSQL**  
+2. Servidor: `localhost:5432`  
+3. Banco: `dw_cvli_docker`  
+4. Usuário: `user_dw` / Senha: `mestre`  
+5. Selecionar tabelas  
+6. Carregar  
 
-------------------------------------------------------------------------
+---
 
-## Colaboradores
+## 📐 Arquitetura do Projeto
 
-> Agradecemos às seguintes pessoas que contribuíram para este projeto:
+```mermaid
+flowchart LR
+    Excel[Planilhas SSP] --> PDI[Pentaho PDI]
+    PDI --> DW[(Data Warehouse PostgreSQL)]
+    DW --> PowerBI[Power BI]
+```
+
+---
+
+## 👥 Colaboradores
 
 <table>
   <tr>
     <td align="center">
       <a href="https://github.com/LaianeBarreto">
-        <img src="https://github.com/LaianeBarreto.png" width="100px;" alt="Foto de perfil de Laiane Barreto"/><br>
-        <sub>
-          <b>Laiane Barreto</b>
-        </sub>
+        <img src="https://github.com/LaianeBarreto.png" width="100px;"><br>
+        <sub><b>Laiane Barreto</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/amandargusmao">
-        <img src="https://github.com/amandargusmao.png" width="100px;" alt="Foto de perfil de Amanda Gusmão"/><br>
-        <sub>
-          <b>Amanda Gusmão</b>
-        </sub>
+        <img src="https://github.com/amandargusmao.png" width="100px;"><br>
+        <sub><b>Amanda Gusmão</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/robertoferreira7">
-        <img src="https://github.com/robertoferreira7.png" width="100px;" alt="Foto de perfil de Roberto Ferreira"/><br>
-        <sub>
-          <b>Roberto Ferreira</b>
-        </sub>
+        <img src="https://github.com/robertoferreira7.png" width="100px;"><br>
+        <sub><b>Roberto Ferreira</b></sub>
       </a>
     </td>
   </tr>
 </table>
-
