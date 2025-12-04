@@ -1,22 +1,53 @@
 ```mermaid
 flowchart LR
-    A["Fontes de Dados\nSSP / ALAGOAS EM DADOS\nIBGE"]:::fonte
-    B["Staging Area\nCVLI\nEstimativas"]:::staging
-    C["Pentaho PDI\nLimpeza\nOrganização\nPadronização\nIntegração"]:::pentaho
-    D["Data Warehouse\nPostgreSQL\n⭐ Star Schema"]:::dw
-    E["Análise & Visualização\nPower BI"]:::bi
+    %% --- FONTES ---
+    A["
+    <b>Fontes de Dados</b><br><br>
+    • SSP / ALAGOAS EM DADOS<br>
+    • IBGE
+    "]:::fonte
 
+    %% --- STAGING AREA ---
+    B["
+    <b>Staging Area</b><br><br>
+    • CVLI<br>
+    • Estimativas
+    "]:::staging
+
+    %% --- TRANSFORMAÇÃO ---
+    C["
+    <b>Pentaho PDI</b><br><br>
+    • Limpeza<br>
+    • Organização<br>
+    • Padronização<br>
+    • Integração
+    "]:::pentaho
+
+    %% --- DATA WAREHOUSE ---
+    D["
+    <b>Data Warehouse</b><br>
+    PostgreSQL<br><br>
+    ⭐ Star Schema
+    "]:::dw
+
+    %% --- BI ---
+    E["
+    <b>Análise & Visualização</b><br>
+    Power BI
+    "]:::bi
+
+    %% FLUXO
     A -->|Extração| B
     B -->|Transformação| C
     C -->|Carga| D
     D --> E
 
-    classDef fonte  fill:#ffffff,stroke:#333,stroke-width:1px;
+    %% ESTILOS
+    classDef fonte fill:#ffffff,stroke:#333,stroke-width:1px;
     classDef staging fill:#e8f1ff,stroke:#3b6db3,stroke-width:1.5px;
     classDef pentaho fill:#eefcff,stroke:#1e90ff,stroke-width:1.5px;
-    classDef dw      fill:#fff5e6,stroke:#d9950d,stroke-width:1.5px;
-    classDef bi      fill:#e6ffe6,stroke:#2b8a3e,stroke-width:1.5px;
-
+    classDef dw fill:#fff5e6,stroke:#d9950d,stroke-width:1.5px;
+    classDef bi fill:#e6ffe6,stroke:#2b8a3e,stroke-width:1.5px;
 
 
 
