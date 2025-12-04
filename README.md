@@ -1,112 +1,182 @@
-🎓 APSI-PROINT — Data Warehouse & Business Intelligence
-Repositório unificado para o projeto desenvolvido nas disciplinas Projeto Integrador (PROINT) e Análise e Projeto de Sistemas de Informação (APSI) — Bacharelado em Sistemas de Informação, semestre 2025.1.
-📌 Descrição do Projeto
+# 🎓 APSI-PROINT --- Data Warehouse & Business Intelligence
 
-O objetivo deste projeto é desenvolver e implementar uma solução de Data Warehouse (DW) e Business Intelligence (BI) para integrar, armazenar e analisar dados criminais e demográficos do estado de Alagoas.
+### Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** --- Bacharelado em Sistemas de Informação, semestre **2025.1**.
 
-A solução integra modelagem, ingestão de dados, processamento ETL e visualização analítica.
+------------------------------------------------------------------------
 
-📁 Organização do Repositório
+## 📌 Descrição do Projeto
 
-🖼️ Trello — adicionar link
+O objetivo deste projeto é desenvolver e implementar uma solução de
+**Data Warehouse (DW)** e **Business Intelligence (BI)** para integrar,
+armazenar e analisar **dados criminais e demográficos do estado de
+Alagoas**.
 
-📄 Documento do Trabalho — adicionar link
+A solução integra modelagem, ingestão de dados, processamento ETL e
+visualização analítica.
 
-📊 Cronograma — adicionar link
+------------------------------------------------------------------------
 
-📜 Termo de Abertura — adicionar link
+## 📁 Organização do Repositório
 
-🛠 Tecnologias Utilizadas
-Tecnologia	Aplicação
-pgModeler	Modelagem lógica e física do Data Warehouse
-PostgreSQL	SGBD utilizado para hospedar o DW
-Pentaho PDI (Kettle)	Processos ETL para carga e tratamento dos dados
-Power BI	Dashboards, relatórios interativos e análise visual
-Docker & Docker Compose	Infraestrutura containerizada para o PostgreSQL do DW
-🐳 Guia Docker — Configuração do Ambiente do DW
-1. Inicialização do Ambiente
-Ação	Comando / Instrução	Observações
-1.1. Iniciar o serviço	No terminal, dentro da pasta com docker-compose.yml:
+-   🖼️ **Trello** --- *adicionar link*\
+-   📄 **Documento do Trabalho** --- *adicionar link*\
+-   📊 **Cronograma** --- *adicionar link*\
+-   📜 **Termo de Abertura** --- *adicionar link*
 
-bash\ndocker-compose up -d\n	Sobe o container e cria o volume db-data.
-1.2. Aplicar estrutura (DDL)	bash\ndocker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < C:\apsi-proint-main\dw_ssp.sql\n	No Git Bash, usar: /c/apsi-proint-main/dw_ssp.sql
-1.3. Validar tabelas	bash\ndocker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\dt"\n	Lista as tabelas criadas.
-🗃️ Conexão via PgAdmin
+------------------------------------------------------------------------
 
-No PgAdmin: Create → Server
+## 🛠 Tecnologias Utilizadas
 
-Aba Connection
+  -----------------------------------------------------------------------
+  Tecnologia                          Aplicação
+  ----------------------------------- -----------------------------------
+  **pgModeler**                       Modelagem lógica e física do Data
+                                      Warehouse
 
-Host: localhost
+  **PostgreSQL**                      SGBD utilizado para hospedar o DW
 
-Port: 5432
+  **Pentaho PDI (Kettle)**            Processos ETL para carga e
+                                      tratamento dos dados
 
-Database: dw_cvli_docker
+  **Power BI**                        Dashboards, relatórios interativos
+                                      e análise visual
 
-Aba Authentication
+  **Docker & Docker Compose**         Infraestrutura containerizada para
+                                      o PostgreSQL do DW
+  -----------------------------------------------------------------------
 
-Username: user_dw
+------------------------------------------------------------------------
 
-Password: mestre
+# 🐳 Guia Docker --- Configuração do Ambiente do DW
 
-Validar conexão:
+## **1. Inicialização do Ambiente**
 
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Ação        Comando / Instrução                                                                                              Observações
+  ----------- ---------------------------------------------------------------------------------------------------------------- ----------------------------------
+  **1.1.      No terminal, dentro da pasta com `docker-compose.yml`:`<br>`{=html}`<br>`{=html}`bash\ndocker-compose up -d\n`   Sobe o container e cria o volume
+  Iniciar o                                                                                                                    `db-data`.
+  serviço**                                                                                                                    
+
+  **1.2.      `bash\ndocker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < C:\\apsi-proint-main\\dw_ssp.sql\n`   No Git Bash, usar:
+  Aplicar                                                                                                                      `/c/apsi-proint-main/dw_ssp.sql`
+  estrutura                                                                                                                    
+  (DDL)**                                                                                                                      
+
+  **1.3.      `bash\ndocker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\\dt"\n`                           Lista as tabelas criadas.
+  Validar                                                                                                                      
+  tabelas**                                                                                                                    
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+# 🗃️ Conexão via PgAdmin
+
+1.  No PgAdmin: **Create → Server**
+2.  Aba **Connection**
+    -   Host: `localhost`\
+    -   Port: `5432`\
+    -   Database: `dw_cvli_docker`
+3.  Aba **Authentication**
+    -   Username: `user_dw`\
+    -   Password: `mestre`
+4.  Validar conexão:
+
+``` sql
 SELECT count(*) FROM public.dim_local;
+```
 
-⚙️ Carga de Dados — Pentaho PDI (ETL)
-3.1 Configurar conexão ssp
+------------------------------------------------------------------------
 
-Tipo: PostgreSQL
+# ⚙️ Carga de Dados --- Pentaho PDI (ETL)
 
-Host: localhost
+## **3.1 Configurar conexão `ssp`**
 
-Porta: 5432
+-   Tipo: PostgreSQL\
+-   Host: `localhost`\
+-   Porta: `5432`\
+-   Banco: `dw_cvli_docker`\
+-   Usuário: `user_dw`\
+-   Senha: `mestre`
 
-Banco: dw_cvli_docker
+## **3.2 Ajustar caminhos das fontes**
 
-Usuário: user_dw
+Em **todas as transformações (.ktr)**:
 
-Senha: mestre
+-   Abrir step **Microsoft Excel Input**
+-   Selecionar arquivo em:
 
-3.2 Ajustar caminhos das fontes
+```{=html}
+<!-- -->
+```
+    C:\apsi-proint-main\Bases de Dados\
 
-Em todas as transformações (.ktr):
+-   Clicar **Add**
 
-Abrir step Microsoft Excel Input
+## **3.3 Executar o Job principal**
 
-Selecionar arquivo em:
+-   Abrir: `job_dw_ssp.kjb`
+-   Clicar: **Run**
 
-C:\apsi-proint-main\Bases de Dados\
+## **3.4 Validar carga**
 
-
-Clicar Add
-
-3.3 Executar o Job principal
-
-Abrir: job_dw_ssp.kjb
-
-Clicar: Run
-
-3.4 Validar carga
+``` sql
 SELECT count(*) FROM fato_cvli;
+```
 
-📊 Conexão no Power BI
+------------------------------------------------------------------------
 
-Obter Dados → PostgreSQL
+# 📊 Conexão no Power BI
 
-Servidor: localhost:5432
+1.  **Obter Dados → PostgreSQL**
+2.  Servidor: `localhost:5432`
+3.  Banco: `dw_cvli_docker`
+4.  Credenciais:
+    -   Usuário: `user_dw`\
+    -   Senha: `mestre`
+5.  Selecionar tabelas (dimensões e fato)\
+6.  Carregar dados
 
-Banco: dw_cvli_docker
+------------------------------------------------------------------------
 
-Credenciais:
+# 👥 Colaboradores
 
-Usuário: user_dw
-
-Senha: mestre
-
-Selecionar tabelas (dimensões e fato)
-
-Carregar dados
-
-👥 Colaboradores
-<table> <tr> <td align="center"> <a href="https://github.com/LaianeBarreto"> <img src="https://github.com/LaianeBarreto.png" width="100px;"><br> <b>Laiane Barreto</b> </a> </td> <td align="center"> <a href="https://github.com/amandargusmao"> <img src="https://github.com/amandargusmao.png" width="100px;"><br> <b>Amanda Gusmão</b> </a> </td> <td align="center"> <a href="https://github.com/robertoferreira7"> <img src="https://github.com/robertoferreira7.png" width="100px;"><br> <b>Roberto Ferreira</b> </a> </td> </tr> </table>
+```{=html}
+<table>
+```
+```{=html}
+<tr>
+```
+```{=html}
+<td align="center">
+```
+`<a href="https://github.com/LaianeBarreto">`{=html}
+`<img src="https://github.com/LaianeBarreto.png" width="100px;">`{=html}`<br>`{=html}
+`<b>`{=html}Laiane Barreto`</b>`{=html} `</a>`{=html}
+```{=html}
+</td>
+```
+```{=html}
+<td align="center">
+```
+`<a href="https://github.com/amandargusmao">`{=html}
+`<img src="https://github.com/amandargusmao.png" width="100px;">`{=html}`<br>`{=html}
+`<b>`{=html}Amanda Gusmão`</b>`{=html} `</a>`{=html}
+```{=html}
+</td>
+```
+```{=html}
+<td align="center">
+```
+`<a href="https://github.com/robertoferreira7">`{=html}
+`<img src="https://github.com/robertoferreira7.png" width="100px;">`{=html}`<br>`{=html}
+`<b>`{=html}Roberto Ferreira`</b>`{=html} `</a>`{=html}
+```{=html}
+</td>
+```
+```{=html}
+</tr>
+```
+```{=html}
+</table>
+```
