@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  dw_postgres:
+    image: postgres:17-alpine
+    container_name: dw_cvli_postgres
+    restart: always
+    environment:
+      # Credenciais do novo banco de dados no Docker
+      POSTGRES_USER: user_dw
+      POSTGRES_PASSWORD: mestre
+      POSTGRES_DB: dw_cvli_docker
+    volumes:
+      # Volume persistente para os dados
+      - db-data:/var/lib/postgresql/data
+      # Mapeia sua pasta de trabalho (onde seu DDL e arquivos de ETL estão)
+      # Altere C:\DW_Files para a pasta correta no seu PC
+      - C:\DW_Files:/app_data 
+    ports:
+      # Mapeia a porta 5432 do seu PC (host) para a porta 5432 do container
+      - "5432:5432"
+
+volumes:
+  db-data:
