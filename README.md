@@ -40,7 +40,6 @@ visualização analítica.
 
   **Docker & Docker Compose:**         Infraestrutura containerizada para
                                       o PostgreSQL do DW
-  -----------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 ## 🐳 Inicialização do Ambiente Docker (Passo a Passo)
