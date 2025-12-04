@@ -46,9 +46,6 @@ visualização analítica.
   -----------------------------------------------------------------------
 
 ------------------------------------------------------------------------
-
-# Guia de Inicialização do Ambiente Docker do Data Warehouse
-
 ## 🐳 Inicialização do Ambiente Docker (Passo a Passo)
 
 ### Pré-requisitos
