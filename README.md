@@ -1,11 +1,5 @@
 # 🎓 APSI-PROINT — Data Warehouse & Business Intelligence
 
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![Pentaho](https://img.shields.io/badge/Pentaho_PDI-0A5?logo=pentaho&logoColor=white)
-![PowerBI](https://img.shields.io/badge/Power_BI-F2C811?logo=powerbi&logoColor=black)
-![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)
-
 Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** — Bacharelado em Sistemas de Informação, semestre **2025.1**.
 
 ---
@@ -46,11 +40,11 @@ A solução envolve:
 
 ## 🛠 Tecnologias Utilizadas
 
-- **pgModeler** — Modelagem lógica e física  
-- **PostgreSQL** — Banco de dados do DW  
-- **Pentaho PDI** — Processos ETL  
-- **Power BI** — Dashboards e análises  
-- **Docker & Docker Compose** — Infraestrutura containerizada  
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Pentaho](https://img.shields.io/badge/Pentaho_PDI-0A5?logo=pentaho&logoColor=white)
+![PowerBI](https://img.shields.io/badge/Power_BI-F2C811?logo=powerbi&logoColor=black)
+![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)
 
 ---
 
