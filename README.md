@@ -1,41 +1,19 @@
-
 flowchart LR
 
     %% --- FONTES ---
-    A["
-    <b>Fontes de Dados</b><br><br>
-    • SSP / ALAGOAS EM DADOS<br>
-    • IBGE
-    "]:::fonte
+    A["Fontes de Dados\n\n• SSP / ALAGOAS EM DADOS\n• IBGE"]:::fonte
 
     %% --- STAGING AREA ---
-    B["
-    <b>Staging Area</b><br><br>
-    • CVLI<br>
-    • Estimativas
-    "]:::staging
+    B["Staging Area\n\n• CVLI\n• Estimativas"]:::staging
 
     %% --- TRANSFORMAÇÃO ---
-    C["
-    <b>Pentaho PDI</b><br><br>
-    • Limpeza<br>
-    • Organização<br>
-    • Padronização<br>
-    • Integração
-    "]:::pentaho
+    C["Pentaho PDI\n\n• Limpeza\n• Organização\n• Padronização\n• Integração"]:::pentaho
 
     %% --- DATA WAREHOUSE ---
-    D["
-    <b>Data Warehouse</b><br>
-    PostgreSQL<br><br>
-    ⭐ Star Schema
-    "]:::dw
+    D["Data Warehouse\nPostgreSQL\n\n⭐ Star Schema"]:::dw
 
     %% --- BI ---
-    E["
-    <b>Análise & Visualização</b><br>
-    Power BI
-    "]:::bi
+    E["Análise & Visualização\nPower BI"]:::bi
 
     %% FLUXO
     A -->|Extração| B
@@ -49,6 +27,7 @@ flowchart LR
     classDef pentaho fill:#eefcff,stroke:#1e90ff,stroke-width:1.5px;
     classDef dw fill:#fff5e6,stroke:#d9950d,stroke-width:1.5px;
     classDef bi fill:#e6ffe6,stroke:#2b8a3e,stroke-width:1.5px;
+
 
 
 
