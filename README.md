@@ -45,6 +45,8 @@ A solução envolve:
 ![Pentaho](https://img.shields.io/badge/Pentaho_PDI-0A5?logo=pentaho&logoColor=white)
 ![PowerBI](https://img.shields.io/badge/Power_BI-F2C811?logo=powerbi&logoColor=black)
 ![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white)
+![Mermaid](https://img.shields.io/badge/Mermaid-FF3670?logo=mermaid&logoColor=white)
+
 
 ---
 
