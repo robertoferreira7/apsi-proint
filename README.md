@@ -189,9 +189,8 @@ SELECT count(*) FROM fato_cvli;
 
 ## Arquitetura do Projeto
 
-<p align="center">
-  <img src="[https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/caminho/da/imagem.png](https://github.com/robertoferreira7/apsi-proint/blob/main/img/Arquitetura%20Atualizada.png?raw=true)" width="750">
-</p>
+<img width="1920" height="1080" alt="Arquitetura Atualizada" src="https://github.com/user-attachments/assets/85f1bfd2-e29b-42f3-814d-37217f8110e5" />
+
 ---
 
 ## 👥 Colaboradores
