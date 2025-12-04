@@ -30,18 +30,18 @@ visualização analítica.
   -----------------------------------------------------------------------
   Tecnologia                          Aplicação
   ----------------------------------- -----------------------------------
-  **pgModeler**                       Modelagem lógica e física do Data
+  **pgModeler:**                       Modelagem lógica e física do Data
                                       Warehouse
 
-  **PostgreSQL**                      SGBD utilizado para hospedar o DW
+  **PostgreSQL:**                      SGBD utilizado para hospedar o DW
 
   **Pentaho PDI (Kettle)**            Processos ETL para carga e
                                       tratamento dos dados
 
-  **Power BI**                        Dashboards, relatórios interativos
+  **Power BI:**                        Dashboards, relatórios interativos
                                       e análise visual
 
-  **Docker & Docker Compose**         Infraestrutura containerizada para
+  **Docker & Docker Compose:**         Infraestrutura containerizada para
                                       o PostgreSQL do DW
   -----------------------------------------------------------------------
 
