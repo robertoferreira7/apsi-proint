@@ -50,21 +50,21 @@ A solução envolve:
 
 ## 🐳 Inicialização do Ambiente Docker (Passo a Passo)
 
-### ✔ Pré-requisitos
+### Pré-requisitos
 - Docker e Docker Compose instalados  
 - Estar no diretório do arquivo `docker-compose.yml`  
 - Ter o arquivo DDL `dw_ssp.sql` disponível localmente  
 
 ---
 
-### ✔ Passo 1 — Iniciar os containers
+### Passo 1 — Iniciar os containers
 ```bash
 docker-compose up -d
 ```
 
 ---
 
-### ✔ Passo 2 — Aplicar a estrutura do banco (DDL)
+### Passo 2 — Aplicar a estrutura do banco (DDL)
 
 #### Windows (PowerShell/CMD)
 ```bash
@@ -78,14 +78,14 @@ docker exec -i dw_cvli_postgres psql -U user_dw -d dw_cvli_docker < /c/apsi-proi
 
 ---
 
-### ✔ Passo 3 — Validar tabelas
+### Passo 3 — Validar tabelas
 ```bash
 docker exec -it dw_cvli_postgres psql -U user_dw -d dw_cvli_docker -c "\dt"
 ```
 
 ---
 
-### ✔ Passo 4 — Teste simples
+### Passo 4 — Teste simples
 ```sql
 SELECT count(*) FROM public.dim_local;
 ```
@@ -136,7 +136,7 @@ SELECT count(*) FROM public.dim_local;
 
 ## ⚙️ Carga de Dados — Pentaho PDI (ETL)
 
-### ✔ 1) Configurar Conexão `ssp`
+### 1) Configurar Conexão `ssp`
 - Tipo: PostgreSQL  
 - Host: `localhost`  
 - Porta: `5432`  
@@ -146,7 +146,7 @@ SELECT count(*) FROM public.dim_local;
 
 ---
 
-### ✔ 2) Ajustar caminhos das fontes (Planilhas Excel)
+### 2) Ajustar caminhos das fontes (Planilhas Excel)
 
 Em **todas as transformações (.ktr)**, configure:
 
@@ -156,7 +156,7 @@ C:/apsi-proint-main/Bases de Dados/
 
 ---
 
-### ✔ 3) Executar o Job Principal
+### 3) Executar o Job Principal
 
 - Abrir: `job_dw_ssp.kjb`  
 - Clicar: **Run**  
