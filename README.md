@@ -1,4 +1,4 @@
-# 🎓 APSI-PROINT --- Data Warehouse & Business Intelligence
+## 🎓 APSI-PROINT --- Data Warehouse & Business Intelligence
 
 ### Repositório unificado para o projeto desenvolvido nas disciplinas **Projeto Integrador (PROINT)** e **Análise e Projeto de Sistemas de Informação (APSI)** --- Bacharelado em Sistemas de Informação, semestre **2025.1**.
 
@@ -19,7 +19,7 @@ visualização analítica.
 ## 📁 Organização do Repositório
 
 -   🖼️ [Trello](https://trello.com/b/Dp9VDaAQ/proint-apsi)
--   📄 **Documento do Trabalho** --- *adicionar link*\
+-   📄 [Google driver](https://drive.google.com/drive/u/0/folders/1lu4PswSunfSxKgVsDYo36EFelErIbT4t)
 -   📊 **Cronograma** --- *adicionar link*\
 -   📜 **Termo de Abertura** --- *adicionar link*
 
@@ -107,7 +107,7 @@ docker-compose down -v
 ```
 
 
-# 🗃️ Conexão via PgAdmin
+## 🗃️ Conexão via PgAdmin
 
 1.  No PgAdmin: **Create → Server**
 2.  Aba **Connection**
@@ -125,9 +125,9 @@ SELECT count(*) FROM public.dim_local;
 
 ------------------------------------------------------------------------
 
-# ⚙️ Carga de Dados --- Pentaho PDI (ETL)
+## ⚙️ Carga de Dados --- Pentaho PDI (ETL)
 
-## **3.1 Configurar conexão `ssp`**
+### **3.1 Configurar conexão `ssp`**
 
 -   Tipo: PostgreSQL\
 -   Host: `localhost`\
@@ -136,7 +136,7 @@ SELECT count(*) FROM public.dim_local;
 -   Usuário: `user_dw`\
 -   Senha: `mestre`
 
-## **3.2 Ajustar caminhos das fontes**
+### **3.2 Ajustar caminhos das fontes**
 
 Em **todas as transformações (.ktr)**:
 
@@ -149,12 +149,12 @@ Em **todas as transformações (.ktr)**:
 
 -   Clicar **Add**
 
-## **3.3 Executar o Job principal**
+### **3.3 Executar o Job principal**
 
 -   Abrir: `job_dw_ssp.kjb`
 -   Clicar: **Run**
 
-## **3.4 Validar carga**
+### **3.4 Validar carga**
 
 ``` sql
 SELECT count(*) FROM fato_cvli;
@@ -162,7 +162,7 @@ SELECT count(*) FROM fato_cvli;
 
 ------------------------------------------------------------------------
 
-# 📊 Conexão no Power BI
+## 📊 Conexão no Power BI
 
 1.  **Obter Dados → PostgreSQL**
 2.  Servidor: `localhost:5432`
