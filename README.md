@@ -1,3 +1,4 @@
+```md
 ```mermaid
 flowchart LR
     %% --- FONTES ---
