@@ -184,7 +184,7 @@ SELECT count(*) FROM fato_cvli;
 ## Arquitetura do Projeto
 
 <p align="center">
-  <img src=src="https://github.com/user-attachments/assets/85f1bfd2-e29b-42f3-814d-37217f8110e5" width="85%">
+  <img width="1920" height="1080" alt="Arquitetura Atualizada" src="https://github.com/user-attachments/assets/134b5a63-dc4b-4c49-b07e-7c59907856f4" />
 </p>
 
 ---
