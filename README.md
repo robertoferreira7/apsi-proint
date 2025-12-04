@@ -20,8 +20,7 @@ visualização analítica.
 
 -   🖼️ [Trello](https://trello.com/b/Dp9VDaAQ/proint-apsi)
 -   📄 [Google driver](https://drive.google.com/drive/u/0/folders/1lu4PswSunfSxKgVsDYo36EFelErIbT4t)
--   📊 **Cronograma** --- *adicionar link*\
--   📜 **Termo de Abertura** --- *adicionar link*
+
 
 ------------------------------------------------------------------------
 
