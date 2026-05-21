@@ -212,11 +212,6 @@ SELECT count(*) FROM fato_cvli;
         <img src="https://github.com/robertoferreira7.png" width="100px;"><br>
         <sub><b>Roberto Ferreira</b></sub>
           </td>
-    <td align="center">
-      <a href="https://github.com/RobertoSants">
-        <img src="https://github.com/RobertoSants.png" width="100px;"><br>
-        <sub><b>Roberto Sants</b></sub>
-      </a>
       </a>
     </td>
   </tr>
